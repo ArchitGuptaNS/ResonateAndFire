@@ -1,0 +1,7 @@
+close all;
+clear all;
+clc;
+
+INSTRUMENTS = {'Viola'; 'Violin'; 'Guitar'; 'Ukulele'; 'Bass'; 'Banjo'};
+BASE_ADDRS  = "../CASES/";
+ADD
