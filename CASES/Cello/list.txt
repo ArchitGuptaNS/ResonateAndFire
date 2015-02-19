@@ -1,0 +1,11 @@
+Cello.arco.pp.sulC.B3Db4.aiff
+Cello.arco.pp.sulC.C2Gb2.aiff
+Cello.arco.pp.sulC.D3Bb3.aiff
+Cello.arco.pp.sulC.Gb2D3.aiff
+Cello.arco.pp.sulG.G2Bb2.aiff
+Cello.pizz.pp.sulC.Ab3Db4.aiff
+Cello.pizz.pp.sulC.B2G3.aiff
+Cello.pizz.pp.sulC.C2Bb2.aiff
+Cello.pizz.pp.sulG.B2C4.aiff
+Cello.pizz.pp.sulG.G2Bb2.aiff
+list.txt
