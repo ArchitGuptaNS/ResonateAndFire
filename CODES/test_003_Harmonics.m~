@@ -2,6 +2,41 @@ close all;
 clear all;
 clc;
 
-INSTRUMENTS = {'Viola'; 'Violin'; 'Guitar'; 'Ukulele'; 'Bass'; 'Banjo'};
-BASE_ADDRS  = "../CASES/";
-ADD
+%%  CONSTANT DECLARATIONS
+
+AIFF_SCALE_FACTOR   = 200;
+
+%%  EXTRACTING MUSICAL DATA AND RESAMPLING
+
+base_addr   = '../CASES/';
+instruments = dir(base_addr);
+instruments = instruments(3:end); 
+
+i           = 3;
+j           = 1;
+
+pieces 	    = dir(strcat(base_addr,instruments(i).name)); 
+pieces      = pieces(3:end);
+ 	
+addr        = strcat(base_addr,'/',instruments(i).name,'/',pieces(j).name);
+file        = double(aiffread(addr))*AIFF_SCALE_FACTOR;
+
+FS      = 441;
+FC      = 100;
+dt      = 1e-2/FC;
+
+S       = resample(file, FC, FS);
+f       = 27.5;
+
+H       = pow2(-2:2)';
+Iext    = repmat([]);
+V       = RnF(S,pi*f*H,dt);
+
+%% PLOTS AND ANALYSIS
+
+figure();
+plot(V(1,:));
+hold on;
+plot(S/max(S));
+xlim([41000 42000]);
+legend('Neural Response', 'Audio Input');
